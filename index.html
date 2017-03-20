@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shopping list</title>
+    <link rel="shortcut icon" href="shopping-list.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!--[if lte IE 8]>
+    <p class="ie-message">IE version 8 and older doesn't supported.</p>
+    <![endif]-->
+    <!--[if IE 9]>
+    <p class="ie-message ie9">IE version 9 and older doesn't supported.</p>
+    <![endif]-->
+    <!--[if IE 5]>
+    <p class="ie-message ie5">IE version 5 doesn't supported.</p>
+    <![endif]-->
+  </head>
+  <body>
+    <section class="shopping-list">
+      <h1 class="title">Shopping List</h1>
+      <ul class="current-products" id="current-products">
+        <li class="product">Pasta</li>
+        <button type="button" name="purchased" class="purchased">Check</button>
+        <li class="product">Mashrooms</li>
+        <button type="button" name="purchased" class="purchased">Check</button>
+        <li class="product">Sour cream</li>
+        <button type="button" name="purchased" class="purchased">Check</button>
+      </ul>
+      <form class="new-products" action="#" id="newItem">
+        <input type="text" name="add-product" placeholder="Add a product" class="add-product" minlength="3" maxlength="30" required>
+        <button type="submit" name="button" class="submit-product">Add</button>
+      </form>
+      <ul class="checked-products" id="checked-products">
+        <li class="product checked">Tomatoes</li>
+        <button type="button" name="delete" class="delete">Delete</button>
+      </ul>
+    </section>
+    <section class="counter">
+      <p>Total:</p>
+      <span class="amount" id="amount">3</span>
+    </section>
+    <script
+		  src="https://code.jquery.com/jquery-3.2.0.min.js"
+		  integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+		  crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

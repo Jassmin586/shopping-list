@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.shopping-list {
+  width: 400px;
+  min-height: 400px;
+  display: block;
+  background-color: #000;
+  color: #FFF;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h1.title {
+  text-align: center;
+  padding: 30px;
+  text-shadow: 1px 1px 2px #FFF;
+}
+
+ul.current-products,
+ul.checked-products {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+ul.checked-products {
+  border: 0;
+}
+
+  li.product {
+    border: 0.5px solid #ccc;
+    -webkit-box-flex: 2;
+    -webkit-flex: 2 0 70%;
+       -moz-box-flex: 2;
+        -ms-flex: 2 0 70%;
+            flex: 2 0 70%;
+    padding: 10px;
+    background-color: green;
+    border-right: 0;
+  }
+
+  button.purchased,
+  button.delete {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 10%;
+       -moz-box-flex: 1;
+        -ms-flex: 1 0 10%;
+            flex: 1 0 10%;
+    background-color: green;
+    border: 0.5px solid #ccc;
+    border-left: 1px dashed #ccc;
+    color: #FFF;
+    text-indent: 100px;
+    overflow: hidden;
+  }
+
+  li.checked,
+  button.delete {
+    opacity: 0.4;
+  }
+
+  button:before {
+    font-size: 1.5rem;
+    float: right;
+    text-indent: 0;
+    width: 100%;
+    position: relative;
+    top: 20%;
+  }
+
+  button.purchased:before {
+    font-family: FontAwesome;
+    content: "\f046";
+  }
+
+  button.delete:before {
+    font-family: FontAwesome;
+    content: "\f014";
+  }
+
+  button.purchased:hover,
+  button.purchased:focus {
+    color: green;
+    background-color: #FFF;
+    cursor: pointer;
+  }
+
+  button.delete:hover,
+  button.delete:focus {
+    background-color: red;
+    cursor: pointer;
+  }
+
+form.new-products {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1px;
+}
+
+  input.add-product {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2 0 70%;
+       -moz-box-flex: 2;
+        -ms-flex: 2 0 70%;
+            flex: 2 0 70%;
+    padding: 10px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+    input.add-product:focus {
+      box-shadow: none;
+    }
+
+  button.submit-product {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 10%;
+       -moz-box-flex: 1;
+        -ms-flex: 1 0 10%;
+            flex: 1 0 10%;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    color: #FFF;
+    background-color: #000;
+  }
+
+  button.submit-product:hover {
+    -webkit-transition: font-size 0.5s, background-color 0.5s;
+    transition: font-size 0.5s, background-color 0.5s;
+    font-size: 1.1rem;
+    background-color: green;
+    cursor: pointer;
+  }
+
+  .counter {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #000;
+    width: 400px;
+    color: #FFF;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 8px;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+  }
+
+    .amount {
+      margin-left: 5px;
+    }
+
+p.ie-message {
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 50px;
+  height: 100vh;
+  min-height: 400px;
+  background-color: #FFF;
+  position: absolute;
+}
+
+p.ie9 {
+  position: static;
+}
+
+p.ie5 {
+  height: 400px;
+}
