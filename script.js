@@ -21,24 +21,53 @@ $(function(){
     if (deleted) {
       $this.prev().remove();
       $this.remove();
+      deleteLocalStorage(product); // to do
     }
 
   });
 
   $("#newItem").on("submit", function(e) {
     var inputText = $("input:text").val();
-    var $productList = $("#current-products");
     e.preventDefault();
-    $productList.append("<li class=\"product\">" + inputText + "</li>").hide()
-               .append("<button type=\"button\" name=\"purchased\" class=\"purchased\">Check</button>").hide()
-               .fadeIn(700);
+    addNewProduct(inputText);
+    saveLocalStorage(inputText);
     $("input:text").val("");
     updateAmount();
   });
 
+  function addNewProduct(product) {
+    var $productList = $("#current-products");
+    $productList.append("<li class=\"product\">" + product + "</li>").hide()
+               .append("<button type=\"button\" name=\"purchased\" class=\"purchased\">Check</button>").hide()
+               .fadeIn(700);
+  }
+
   function updateAmount() {
     var amount = $("#current-products").children(".product").length;
     $("#amount").text(amount);
+  }
+
+  var i = 0;
+  (function() {
+    var elem = localStorage.length;
+    if (elem !== 0) {
+      for (var j=0; j < elem; j++) {
+        addNewProduct(localStorage.getItem("product" + j));
+      }
+      updateAmount();
+    }
+  }());
+
+
+  function saveLocalStorage(product) {
+    if (window.localStorage) {
+      localStorage.setItem("product"+ i, product);
+      i++;
+    }
+  }
+
+  function deleteLocalStorage(product) {
+    localStorage.removeItem(product);
   }
 
 });
