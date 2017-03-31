@@ -39,24 +39,24 @@ $(function(){
                .fadeIn(700);
   }
 
-  function selectProduct($product) {
-    $product.prev().addClass("checked");
-    $product.text("Delete")
+  function selectProduct($btnProduct) {
+    $btnProduct.prev().addClass("checked");
+    $btnProduct.text("Delete")
         .removeClass("purchased")
         .addClass("delete");
 
-    var $moveItem = $product.prev().detach();
-    var $moveBtn = $product.detach();
+    var $moveItem = $btnProduct.prev().detach();
+    var $moveBtn = $btnProduct.detach();
     $moveItem.appendTo("#checked-products");
     $moveBtn.appendTo("#checked-products");
-
     updateAmount();
   }
 
-  function deleteProduct($product) {
-    $product.prev().remove();
-    $product.remove();
-    deleteLocalStorage("product"); // to do
+  function deleteProduct($btnProduct) {
+    var $liProduct = $btnProduct.prev();
+    $liProduct.remove();
+    $btnProduct.remove();
+    deleteLocalStorage($liProduct);
   }
 
   function updateAmount() {
@@ -70,8 +70,13 @@ $(function(){
     }
   }
 
-  function deleteLocalStorage(product) {
-    localStorage.removeItem(product);
+  function deleteLocalStorage($liProduct) {
+    var product = $liProduct.text();
+    var i = tab.indexOf(product);
+    if (i >= 0) {
+    	tab.splice(i, 1);
+    }
+    saveLocalStorage(JSON.stringify(tab));
   }
 
 });
