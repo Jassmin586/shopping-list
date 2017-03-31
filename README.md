@@ -9,3 +9,4 @@
 * Select a product which is purchased
 * Delete a product from the Shopping List
 * Count number of products
+* Save data in LocalStorage
